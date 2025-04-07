@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RealEstateX</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .centered {
+        text-align: center;
+        padding: 5rem 1rem;
+      }
+      .login-card, .property-card {
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        background: white;
+        margin-bottom: 1rem;
+      }
+      .property-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .icon {
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+  <body style="background-image: url('https://images.unsplash.com/photo-1508051123996-69f8caf4891f');">
+    
+    <nav class="container-fluid">
+      <ul>
+        <li><strong>RealEstateX</strong></li>
+      </ul>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#" role="button">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="relative z-10 flex flex-col justify-center items-center h-full px-8 text-center" id="el-4i987o2u">
+      <h1 class="text-4xl font-bold text-white mb-3" id="el-gn70a4pm">PropertyPro</h1>
+      <p class="text-lg text-white/90 mb-12" id="el-dqxub7il">Find your perfect property match with ease</p>
+      
+      <button class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg transform transition duration-200 hover:scale-105" @click="activeScreen = 'loginSelection'; showLoginSelection = true" id="el-m0o2z42c">
+        Get Started
+      </button>
+    </div>
+    <main class="container">
+      <!-- Get Started Page -->
+      <div class="grid">
+        <section class="centered">
+          <hgroup>
+            <h2>Welcome to RealEstateX</h2>
+            <h3>Your gateway to beautiful living spaces</h3>
+          </hgroup>
+          <p>Find your perfect home or manage your properties with ease.</p>
+          <a href="#login-selection" role="button">Get Started</a>
+        </section>
+
+        <!-- Login Selection -->
+        <section id="login-selection" class="login-card">
+          <hgroup>
+            <h2>Login As</h2>
+            <h3>Select your user type</h3>
+          </hgroup>
+          <div class="grid">
+            <a href="#customer-login" role="button">Customer Login</a>
+            <a href="#owner-login" role="button">Owner Login</a>
+          </div>
+        </section>
+
+        <!-- Customer Login -->
+        <section id="customer-login" class="login-card">
+          <hgroup>
+            <h2>Customer Login</h2>
+            <h3>Access your account</h3>
+          </hgroup>
+          <form>
+            <input type="text" placeholder="Email or Username" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit" onclick="event.preventDefault()">Login</button>
+          </form>
+          <a href="#login-selection">← Back to selection</a>
+        </section>
+
+        <!-- Owner Login -->
+        <section id="owner-login" class="login-card">
+          <hgroup>
+            <h2>Owner Login</h2>
+            <h3>Manage your listings</h3>
+          </hgroup>
+          <form>
+            <input type="text" placeholder="Email or Username" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit" onclick="event.preventDefault()">Login</button>
+          </form>
+          <a href="#login-selection">← Back to selection</a>
+        </section>
+
+        <!-- Property Showcase -->
+        <section class="login-card">
+          <hgroup>
+            <h2>Property Dashboard</h2>
+            <h3>Explore or manage listings</h3>
+          </hgroup>
+
+          <input type="search" placeholder="Search properties..." />
+
+          <div class="grid">
+            <select>
+              <option>All Prices</option>
+              <option>Below $1000</option>
+              <option>$1000 - $3000</option>
+              <option>Above $3000</option>
+            </select>
+            <select>
+              <option>All Locations</option>
+              <option>New York</option>
+              <option>Los Angeles</option>
+              <option>Chicago</option>
+            </select>
+            <select>
+              <option>All Types</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Studio</option>
+            </select>
+          </div>
+
+          <!-- Property Cards -->
+          <div class="grid">
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1598928506311-c55dedbbd1be" alt="Apartment NYC" class="property-img" />
+              <h3>3BHK Apartment in New York</h3>
+              <p><strong>$3200/month</strong> – Central Park views, 2 baths, gym access.</p>
+              <a href="#" role="button">Contact Owner</a>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Studio" class="property-img" />
+              <h3>Modern Studio in LA</h3>
+              <p><strong>$2200/month</strong> – Compact, stylish, and fully furnished.</p>
+              <a href="#" role="button">Contact Owner</a>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1560448071-75c3e2e08aa5" alt="Suburban house" class="property-img" />
+              <h3>Cozy House in Chicago</h3>
+              <p><strong>$1800/month</strong> – Family-friendly with backyard and parking.</p>
+              <a href="#" role="button">Contact Owner</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <section aria-label="Subscribe example">
+      <div class="container">
+        <article>
+          <hgroup>
+            <h2>Stay in the loop</h2>
+            <h3>Get property alerts and updates</h3>
+          </hgroup>
+          <form class="grid">
+            <input type="text" id="firstname" name="firstname" placeholder="First name" aria-label="First name" required />
+            <input type="email" id="email" name="email" placeholder="Email address" aria-label="Email address" required />
+            <button type="submit" onclick="event.preventDefault()">Subscribe</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <footer class="container">
+      <small><a href="#">Privacy</a> • <a href="#">Terms</a></small>
+    </footer>
+  </body>
+</html>
